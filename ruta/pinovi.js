@@ -3,7 +3,7 @@ const Pin = require("../model/Pin");
 
 router.post("/", async (req, res) => {
   const noviPin = new Pin(req.body);
-
+ 
   try {
     const sacuvanPin = await noviPin.save();
     res.status(200).json(sacuvanPin);
