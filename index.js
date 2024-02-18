@@ -15,8 +15,8 @@ mongoose
   })
   .catch((err) => console.log(err));
 
-app.use("/pins", pinRoute);
-app.use("/users", korisnikRoute);
+app.use("/api/pins", pinRoute);
+app.use("/api/users", korisnikRoute);
 
 app.listen(8800, () => {
   console.log("Server osluskuje");
