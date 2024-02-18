@@ -1,0 +1,15 @@
+version: "3"
+services:
+  frontend:
+    image: travel-front:latest
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+  backend:
+    image: travel-back:latest
+    ports:
+      - "8800:8800"
+    environment:
+      - NODE_ENV=development
