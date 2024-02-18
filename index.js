@@ -8,7 +8,7 @@ app.use(express.json());
 
 mongoose
   .connect(
-    "mongodb+srv://ivadjokovic2:iva@cluster0.7bdfht8.mongodb.net/?retryWrites=true&w=majority"
+    'mongodb://mongodb:27017/travels'
   )
   .then(() => {
     console.log("Povezan sa bazom");

@@ -14,4 +14,4 @@ RUN npm install
 COPY . .
 
 # Pokreni aplikaciju
-CMD ["node", "index.js"]
+CMD [ "npm", "start" ]
