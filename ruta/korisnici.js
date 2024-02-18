@@ -26,21 +26,23 @@ router.post("/login", async (req, res) => {
       korisnickoime: req.body.korisnickoime,
     });
 
-    !korisnik && res.status(400).json("Netacno koriscnicko ime ili sifra!");
+    if (!korisnik) {
+      return res.status(400).json("Netacno koriscnicko ime ili sifra!");
+    }
 
     const validnaLozinka = await bcrypt.compare(
       req.body.lozinka,
       korisnik.lozinka
     );
 
-    !validnaLozinka &&
-      res.status(400).json("Netacno koriscnicko ime ili sifra!");
+    if (!validnaLozinka)
+      return res.status(400).json("Netacno koriscnicko ime ili sifra!");
 
-    res
+    return res
       .status(200)
       .json({ _id: korisnik._id, korisnickoime: korisnik.korisnickoime });
   } catch (greska) {
-    res.status(500).json(greska);
+    return res.status(500).json(greska);
   }
 });
 
