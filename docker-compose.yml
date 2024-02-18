@@ -13,3 +13,5 @@ services:
       - "8800:8800"
     environment:
       - NODE_ENV=development
+    volumes:
+      - ./backend:/usr/src/app # Promenjen putanja za mapiranje, ovo zavisi od strukture projekta
